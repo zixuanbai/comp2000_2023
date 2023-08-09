@@ -33,4 +33,20 @@ public class Cell {
       return false;
     }
   }
+  public int getX(){
+    return x;
+  }
+  public int getY(){
+    return y;
+  }
+
+    public int getSize() {
+        return size;
+    }
+
+   
+
+
+    
+  
 }

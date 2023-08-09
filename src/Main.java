@@ -11,16 +11,18 @@ public class Main extends JFrame {
     }
 
     class Canvas extends JPanel {
-      Grid grid = new Grid();
+      Stage stage = new Stage();
+  
       public Canvas() {
-        setPreferredSize(new Dimension(720, 720));
+          setPreferredSize(new Dimension(720, 720));
       }
-
+  
       @Override
       public void paint(Graphics g) {
-        grid.paint(g, getMousePosition());
+          stage.paint(g);
       }
-    }
+  }
+  
 
     private Main() {
       this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,6 +35,9 @@ public class Main extends JFrame {
     public void run() {
       while(true) {
         repaint();
+        try{
+          Thread.sleep(20);
+        }catch(InterruptedException e){}
       }
     }
 }
